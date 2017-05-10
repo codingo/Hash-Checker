@@ -36,13 +36,14 @@ $Hash = Get-FileHash $Filename -Algorithm SHA1 | select hash
 
 
 #Compare Hashes
-    if ($hash.Hash -eq $HashCheck) {
-            write-host "Hashes match " -ForegroundColor yellow 
-                    } 
-                else 
-                {
-                write-host ""$hash.hash" does not match $HashCheck " -ForegroundColor red 
-        }
+if ($hash.Hash -eq $HashCheck) 
+{
+        write-host "Hashes match " -ForegroundColor yellow 
+} 
+else 
+{
+        write-host ""$hash.hash" does not match $HashCheck " -ForegroundColor red 
+}
 
         
 Read-Host -Prompt "Press Enter to exit"
